@@ -4,7 +4,7 @@ setup(
     name='pynightmares',
     version='0.1.0',
     description='A collection of funny and strange Python scripts',
-    long_description="Крутой пакетик, почитай тут -> https://github.com/mrf0rtuna4/PythonicNightmares",
+    long_description="Крутой пакетик, почитай на гите",
     author='mrf0rtuna4',
     author_email='heypers.team@gmail.com',
     url='https://github.com/mrf0rtuna4/PythonicNightmares',
