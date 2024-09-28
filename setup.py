@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pynightmares',
-    version='0.1.0',
+    version='0.1.1',
     description='A collection of funny and strange Python scripts',
     long_description="Крутой пакетик, почитай на гите",
     author='mrf0rtuna4',
