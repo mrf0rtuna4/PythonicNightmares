@@ -25,3 +25,5 @@ class CommandRegistry:
             command["func"]()
         else:
             raise ValueError(f"Команда '{command_name}' не найдена.")
+
+registry = CommandRegistry()
