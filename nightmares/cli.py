@@ -1,8 +1,8 @@
 import sys
 import logging as logger
 from argparse import ArgumentParser
-from nightmares.modules import CommandRegistry as command_registry
-from nightmares.scripts import load_all_modules_from_package
+from .modules import CommandRegistry as command_registry
+from .modules import load_modules
 
 logger.basicConfig(level=logger.INFO, format='%(levelname)s: %(message)s')
 
@@ -16,7 +16,7 @@ def main():
         print_help()
         return
 
-    load_all_modules_from_package("nightmares.scripts")
+    load_modules("nightmares.scripts")
 
     command = args.command
 

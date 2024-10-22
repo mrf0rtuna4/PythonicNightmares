@@ -2,7 +2,7 @@ import importlib
 import os
 import sys
 
-def load_all_modules_from_package(package_name):
+def load_modules(package_name):
     package = sys.modules[package_name]
     package_path = package.__path__[0]
     
