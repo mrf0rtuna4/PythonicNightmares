@@ -14,16 +14,16 @@ class Cogs:
 
 
 # Делаем "шедевр"
-lol = Property()
-lol.cogs = Cogs()  # Свойство Property каким-то образом становится Cogs
+property = Property()
+property.cogs = Cogs()  # Свойство Property каким-то образом становится Cogs
 
 
 @registry.register("lol", aliases=["laugh", "fun"], help_text="Возвращает Help.")
 def lol_command():
     # Процесс "гениального" объекта
     funny_object = {
-        "property": lol,  # Да.
-        "cogs": lol.cogs  # Потому что почему бы и нет?)
+        "property": property,  # Да.
+        "cogs": property.cogs  # Потому что почему бы и нет?)
     }
 
     print(f"Вот ваш объект: {funny_object}")
@@ -31,7 +31,7 @@ def lol_command():
 
     try:
         # Имаджинируем поведение для взрыва
-        print(f"property.name: {lol.name}")  # Все еще свойство
-        print(f"cogs.description: {lol.cogs.description}")  # ОГО!
+        print(f"property.name: {property.name}")  # Все еще свойство
+        print(f"cogs.description: {property.cogs.description}")  # ОГО!
     except AttributeError as e:
         print(f"Ошибка, но она нас радует: {e}")

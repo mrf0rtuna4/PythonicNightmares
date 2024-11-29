@@ -1,15 +1,15 @@
 import random
+import os
+import sys
 from nightmares.modules import CommandRegistry
 
 command_registry = CommandRegistry()
 
 class QuantumError(Exception):
-    """An error that exists and doesn't exist at the same time."""
     def __init__(self, message="This error is in a superposition of states."):
         super().__init__(message)
 
 class TimeTravelError(Exception):
-    """An error that occurs in the future."""
     def __init__(self, message="This error will happen in the future."):
         super().__init__(message)
 
@@ -26,6 +26,8 @@ def run():
         RuntimeError("This is a runtime error, but it's not really an error"),
         MemoryError("Out of memory... or maybe just out of jokes"),
         FileNotFoundError("Where did the file go? It was here a second ago!"),
+        FileNotFoundError(f"Файл потерялся где-то в: {os.path.realpath(__file__)}"),
+        AttributeError(f"Ошибка атрибута. Проверь {os.path.dirname(sys.argv[0])}"),
         UnicodeDecodeError("utf-8", b'\xff', 0, 1, "invalid start byte"),
         ImportError("No module named 'non_existent_module'"),
         AssertionError("This should never happen... but it did!"),
@@ -55,5 +57,11 @@ def run():
     ]
     
     error = random.choice(errors)
+
+    random_path_msg = f"(File: {os.path.realpath(__file__)})"
+    
+    if random.random() < 0.5:
+        print(random_path_msg)
+
     raise error
     
