@@ -1,0 +1,4 @@
+transformers 
+datasets 
+torch
+disnake=>3.11.11
